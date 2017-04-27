@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1050308457733",
+    "firebase_url": "https://romfirebaseproject.firebaseio.com",
+    "project_id": "romfirebaseproject",
+    "storage_bucket": "romfirebaseproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050308457733:android:9eec43e30d478c0e",
+        "android_client_info": {
+          "package_name": "trainedge.rom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050308457733-idgr851l798dlfl95ogqm3qcn2ftbh5d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "trainedge.rom",
+            "certificate_hash": "f01cff77e64ab310a5f803bef07cf1d2cd24d279"
+          }
+        },
+        {
+          "client_id": "1050308457733-f7e63dg1j24u7l13hk45cr7kcd318q9b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "trainedge.rom",
+            "certificate_hash": "c12197b0cf142704817c4be02c0c3a422c27d91f"
+          }
+        },
+        {
+          "client_id": "1050308457733-dtmui8ruapf3htlmel1h178gu02i72j3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEn7WUKxJnPFYNqck_Ci1iPSFljEAVzcg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050308457733-dtmui8ruapf3htlmel1h178gu02i72j3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
