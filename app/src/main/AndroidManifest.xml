@@ -12,9 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login">
-
-        </activity>
+        <activity android:name=".Login"></activity>
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
@@ -74,6 +72,7 @@
             </intent-filter>
         </service>
 
+        <activity android:name=".Task_activity"></activity>
     </application>
 
 </manifest>

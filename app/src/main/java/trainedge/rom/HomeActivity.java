@@ -125,7 +125,11 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intent1);
             finish();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.menu_Task) {
+            Intent intent3=new Intent(HomeActivity.this,Task_activity.class);
+            startActivity(intent3);
+        }
+        else if (id == R.id.Menu_share) {
                sendInvitation();
         } else if (id == R.id.Menu_about) {
             Intent obj=new Intent(HomeActivity.this,about_page.class);

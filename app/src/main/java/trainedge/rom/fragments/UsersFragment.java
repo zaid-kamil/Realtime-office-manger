@@ -21,11 +21,7 @@ import trainedge.rom.core.users.get.all.GetUsersPresenter;
 import trainedge.rom.models.User;
 import trainedge.rom.utils.ItemClickSupport;
 
-/**
- * Author: Kartik Sharma
- * Created on: 8/28/2016 , 10:36 AM
- * Project: FirebaseChat
- */
+
 
 public class UsersFragment extends Fragment implements GetUsersContract.View, ItemClickSupport.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
     public static final String ARG_TYPE = "type";

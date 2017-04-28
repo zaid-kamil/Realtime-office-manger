@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#27298c</color>
+    <color name="colorPrimary">#3f51b5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorMediumPurple">#8C53E5</color>
@@ -76,7 +76,7 @@
     <color name="yellow_700">#FBC02D</color>
     <color name="yellow_800">#F9A825</color>
     <color name="yellow_900">#F57F17</color>
-    <color name="yellow_A100">#FFFF8D</color>
+    <color name="yellow_A100">#8ddbff</color>
     <color name="yellow_A200">#FFFF00</color>
     <color name="yellow_A400">#FFEA00</color>
     <color name="yellow_A700">#FFD600</color>
@@ -101,7 +101,7 @@
     <color name="blue_grey_200">#B0BEC5</color>
     <color name="blue_grey_300">#90A4AE</color>
     <color name="blue_grey_400">#78909C</color>
-    <color name="blue_grey_500">#607D8B</color>
+    <color name="blue_grey_500">#607d8b</color>
     <color name="blue_grey_600">#546E7A</color>
     <color name="blue_grey_700">#455A64</color>
     <color name="blue_grey_800">#37474F</color>
@@ -167,7 +167,7 @@
     <color name="light_green_A400">#76FF03</color>
     <color name="light_green_A700">#64DD17</color>
 
-    <color name="amber_50">#FFF8E1</color>
+    <color name="amber_50">#fff8e1</color>
     <color name="amber_100">#FFECB3</color>
     <color name="amber_200">#FFE082</color>
     <color name="amber_300">#FFD54F</color>
@@ -184,7 +184,7 @@
 
     <color name="brown_50">#EFEBE9</color>
     <color name="brown_100">#D7CCC8</color>
-    <color name="brown_200">#BCAAA4</color>
+    <color name="brown_200">#bcaaa4</color>
     <color name="brown_300">#A1887F</color>
     <color name="brown_400">#8D6E63</color>
     <color name="brown_500">#795548</color>
@@ -209,9 +209,9 @@
     <color name="purple_A700">#AA00FF</color>
 
     <color name="blue_50">#E3F2FD</color>
-    <color name="blue_100">#BBDEFB</color>
+    <color name="blue_100">#bbdefb</color>
     <color name="blue_200">#90CAF9</color>
-    <color name="blue_300">#64B5F6</color>
+    <color name="blue_300">#64b5f6</color>
     <color name="blue_400">#42A5F5</color>
     <color name="blue_500">#2196F3</color>
     <color name="blue_600">#1E88E5</color>
@@ -225,7 +225,7 @@
 
     <color name="teal_50">#E0F2F1</color>
     <color name="teal_100">#B2DFDB</color>
-    <color name="teal_200">#80CBC4</color>
+    <color name="teal_200">#80cbc4</color>
     <color name="teal_300">#4DB6AC</color>
     <color name="teal_400">#26A69A</color>
     <color name="teal_500">#009688</color>
@@ -233,7 +233,7 @@
     <color name="teal_700">#00796B</color>
     <color name="teal_800">#00695C</color>
     <color name="teal_900">#004D40</color>
-    <color name="teal_A100">#A7FFEB</color>
+    <color name="teal_A100">#a7ffeb</color>
     <color name="teal_A200">#64FFDA</color>
     <color name="teal_A400">#1DE9B6</color>
     <color name="teal_A700">#00BFA5</color>
