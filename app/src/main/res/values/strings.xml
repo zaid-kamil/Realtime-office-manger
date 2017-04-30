@@ -32,14 +32,12 @@
     <string name="cancel">cancel</string>
 
     ///////////////////////
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+    <string-array name="task_type">
+        <item>Important</item>
+        <item>Financial</item>
+        <item>Internal</item>
+        <item>External</item>
+        <item>personal</item>
+
     </string-array>
 </resources>

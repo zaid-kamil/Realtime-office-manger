@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -14,9 +16,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import trainedge.rom.models.Task;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,24 +44,52 @@ public class HomeActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        checkTask();
     }
+
+    private void checkTask() {
+
+        final List<Task> taskList = new ArrayList<>();
+        RecyclerView rvTaskList= (RecyclerView) findViewById(R.id.rvTasklist);
+        rvTaskList.setLayoutManager(new LinearLayoutManager(this));
+        final TaskAdapter adapter = new TaskAdapter(this, taskList);
+        rvTaskList.setAdapter(adapter);
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = currentUser.getUid();
+        String email = currentUser.getEmail();
+        DatabaseReference notification = FirebaseDatabase.getInstance().getReference("tasks_notification").child(uid);
+        notification.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                taskList.clear();
+                if (dataSnapshot.hasChildren()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        taskList.add(new Task(snapshot));
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                if (databaseError != null) {
+                    Toast.makeText(HomeActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
     private void sendInvitation() {
         Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
                 .setMessage(getString(R.string.invitation_message))
@@ -113,26 +155,25 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.menu_chat) {
-            startActivity(new Intent(this,UserListingActivity.class));
+            startActivity(new Intent(this, UserListingActivity.class));
             // Handle the camera action
         } else if (id == R.id.menu_feedback) {
-            Intent intent2=new Intent(HomeActivity.this,Feedback.class);
+            Intent intent2 = new Intent(HomeActivity.this, Feedback.class);
             startActivity(intent2);
 
         } else if (id == R.id.menu_logout) {
             FirebaseAuth.getInstance().signOut();
-            Intent intent1=new Intent(HomeActivity.this,Login.class);
+            Intent intent1 = new Intent(HomeActivity.this, LoginActivity.class);
             startActivity(intent1);
             finish();
 
         } else if (id == R.id.menu_Task) {
-            Intent intent3=new Intent(HomeActivity.this,Task_activity.class);
+            Intent intent3 = new Intent(HomeActivity.this, Task_activity.class);
             startActivity(intent3);
-        }
-        else if (id == R.id.Menu_share) {
-               sendInvitation();
+        } else if (id == R.id.Menu_share) {
+            sendInvitation();
         } else if (id == R.id.Menu_about) {
-            Intent obj=new Intent(HomeActivity.this,about_page.class);
+            Intent obj = new Intent(HomeActivity.this, about_page.class);
             startActivity(obj);
             finish();
 
